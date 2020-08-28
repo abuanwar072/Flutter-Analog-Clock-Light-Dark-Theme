@@ -1,4 +1,7 @@
-# Analog Clock Light & Dark Theme - Flutter UI - Starting Code
+# Analog Clock Light & Dark Theme - Flutter UI
+
+### Note that: Full Code will be available on 05/9/2020
+### Now full code only for patreon users [Link](https://bit.ly/2D7XHZt)
 
 ## [Watch it on YouTube](https://youtu.be/u6Cfzng3Gek)
 
