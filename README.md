@@ -1,8 +1,6 @@
 # Analog Clock Light & Dark Theme - Flutter UI
 
-### Note that: Full Code will be available on 05/9/2020
-
-### Now full code only for patreon users [Link](https://bit.ly/2D7XHZt)
+We design a nice clean analog clock app UI by using flutter. Our clock supports both the Dark and Light theme. If you want to learn how to use both Light and Dark theme then it helps a lot.
 
 ## [Watch it on YouTube](https://youtu.be/u6Cfzng3Gek)
 
