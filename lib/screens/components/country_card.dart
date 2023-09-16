@@ -5,12 +5,12 @@ import '../../size_config.dart';
 
 class CountryCard extends StatelessWidget {
   const CountryCard({
-    Key key,
-    @required this.country,
-    @required this.timeZone,
-    @required this.iconSrc,
-    @required this.time,
-    @required this.period,
+    Key? key,
+    required this.country,
+    required this.timeZone,
+    required this.iconSrc,
+    required this.time,
+    required this.period,
   }) : super(key: key);
 
   final String country, timeZone, iconSrc, time, period;
@@ -28,8 +28,8 @@ class CountryCard extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                color: Theme.of(context).primaryIconTheme.color,
-              ),
+                  // color: Theme.of(context).primaryIconTheme.color,
+                  ),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,23 +38,23 @@ class CountryCard extends StatelessWidget {
                   country,
                   style: Theme.of(context)
                       .textTheme
-                      .headline4
+                      .headlineMedium!
                       .copyWith(fontSize: getProportionateScreenWidth(16)),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(timeZone),
-                Spacer(),
+                const Spacer(),
                 Row(
                   children: [
                     SvgPicture.asset(
                       iconSrc,
                       width: getProportionateScreenWidth(40),
-                      color: Theme.of(context).accentIconTheme.color,
+                      // color: Theme.of(context).accentIconTheme.color,
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       time,
-                      style: Theme.of(context).textTheme.headline4,
+                      style: Theme.of(context).textTheme.headlineMedium,
                     ),
                     RotatedBox(
                       quarterTurns: 3,

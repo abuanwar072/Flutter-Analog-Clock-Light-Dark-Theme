@@ -1,16 +1,16 @@
-import 'package:analog_clock/models/my_theme_provider.dart';
-import 'package:analog_clock/theme.dart';
+import 'theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'models/my_theme_provider.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             theme: themeData(context),
             darkTheme: darkThemeData(context),
             themeMode: theme.isLightTheme ? ThemeMode.light : ThemeMode.dark,
-            home: HomeScreen(),
+            home: const HomeScreen(),
           ),
         ));
   }

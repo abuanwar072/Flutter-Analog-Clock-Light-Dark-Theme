@@ -1,12 +1,12 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-
 import '../../size_config.dart';
 
 class TimeInHourAndMinute extends StatefulWidget {
+  const TimeInHourAndMinute({super.key});
+
   @override
-  _TimeInHourAndMinuteState createState() => _TimeInHourAndMinuteState();
+  State<TimeInHourAndMinute> createState() => _TimeInHourAndMinuteState();
 }
 
 class _TimeInHourAndMinuteState extends State<TimeInHourAndMinute> {
@@ -14,7 +14,7 @@ class _TimeInHourAndMinuteState extends State<TimeInHourAndMinute> {
   @override
   void initState() {
     super.initState();
-     Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_timeOfDay.minute != TimeOfDay.now().minute) {
         setState(() {
           _timeOfDay = TimeOfDay.now();
@@ -30,7 +30,7 @@ class _TimeInHourAndMinuteState extends State<TimeInHourAndMinute> {
 
   @override
   Widget build(BuildContext context) {
-    String _period = _timeOfDay.period == DayPeriod.am ? "AM" : "PM";
+    String period = _timeOfDay.period == DayPeriod.am ? "AM" : "PM";
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -38,13 +38,13 @@ class _TimeInHourAndMinuteState extends State<TimeInHourAndMinute> {
           // if you use _timeOfDay.hour then it will show 20:10 like that
           // But we want 8:10
           "${_timeOfDay.hourOfPeriod}:${_timeOfDay.minute}",
-          style: Theme.of(context).textTheme.headline1,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
-        SizedBox(width: 5),
+        const SizedBox(width: 5),
         RotatedBox(
           quarterTurns: 3,
           child: Text(
-            _period,
+            period,
             style: TextStyle(fontSize: getProportionateScreenWidth(18)),
           ),
         ),

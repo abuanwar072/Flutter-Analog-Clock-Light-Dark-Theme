@@ -1,18 +1,18 @@
 import 'dart:async';
 import 'dart:math';
-
-import 'package:analog_clock/models/my_theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-
+import '../../models/my_theme_provider.dart';
 import '../../constants.dart';
 import '../../size_config.dart';
 import 'clock_painter.dart';
 
 class Clock extends StatefulWidget {
+  const Clock({super.key});
+
   @override
-  _ClockState createState() => _ClockState();
+  State<Clock> createState() => _ClockState();
 }
 
 class _ClockState extends State<Clock> {
@@ -21,7 +21,7 @@ class _ClockState extends State<Clock> {
   @override
   void initState() {
     super.initState();
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         _dateTime = DateTime.now();
       });
@@ -43,7 +43,7 @@ class _ClockState extends State<Clock> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0, 0),
+                    offset: const Offset(0, 0),
                     color: kShadowColor.withOpacity(0.14),
                     blurRadius: 64,
                   ),
